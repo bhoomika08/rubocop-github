@@ -1,0 +1,15 @@
+s = gets.chomp
+if s.empty?
+  puts 'Please provide an input'
+  exit
+end
+
+def count_frequency(s)
+  h = Hash.new(0)
+  s.each_char do |char|
+    next unless char =~ /[a-z]/i
+    h[char] += 1
+  end
+  h
+end
+p count_frequency(s)
